@@ -1,6 +1,6 @@
 # piano-tribute-page
 
-A tribute page for piano with parallax effect. 
+A tribute page for piano with parallax effect, hosted as a [GitHub page](https://htbkoo.github.io/piano-tribute-page/). 
 
 ### Background
 
