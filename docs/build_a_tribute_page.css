@@ -129,3 +129,89 @@ strong {
 .pull-flex-end {
     align-self: flex-end;
 }
+
+/*
+    xs, extra-small: 0px or larger
+    sm, small: 600px or larger
+    md, medium: 960px or larger
+    lg, large: 1280px or larger
+    xl, extra-large: 1920px or larger
+*/
+
+@media (max-width: 959px) {
+    html, body {
+        font-size: 15px;
+    }
+
+    h1 {
+        font-size: 3.2em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    code, pre {
+        font-size: 0.64em;
+    }
+
+    .solid {
+        font-size: 1.2em;
+    }
+
+    .strong {
+        font-size: 2.4em;
+    }
+}
+
+@media (max-width: 599px) {
+    html, body {
+        font-size: 12px;
+    }
+
+    h1 {
+        font-size: 2.67em;
+    }
+
+    h2 {
+        font-size: 1.67em;
+    }
+
+    code, pre {
+        font-size: 0.53em;
+    }
+
+    .solid {
+        font-size: 1em;
+    }
+
+    .strong {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 399px) {
+    html, body {
+        font-size: 9px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.25em;
+    }
+
+    code, pre {
+        font-size: 0.4em;
+    }
+
+    .solid {
+        font-size: 0.75em;
+    }
+
+    .strong {
+        font-size: 1.5em;
+    }
+}
