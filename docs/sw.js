@@ -88,10 +88,6 @@ self.__precacheManifest = [
   {
     "url": "redirect.html",
     "revision": "e1a63989cbb0ef1f9d3d9c471bd8b377"
-  },
-  {
-    "url": "workbox-config.js",
-    "revision": "3671b2ec18b1485d0bc44e426c8d70d8"
   }
 ].concat(self.__precacheManifest || []);
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
