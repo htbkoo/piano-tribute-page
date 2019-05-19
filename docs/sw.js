@@ -1,135 +1,30 @@
-"use strict";
+/**
+ * Welcome to your Workbox-powered service worker!
+ *
+ * You'll need to register this file in your web app and you should
+ * disable HTTP caching for this file too.
+ * See https://goo.gl/nhQhGp
+ *
+ * The rest of the code is auto-generated. Please don't update this file
+ * directly; instead, make changes to your Workbox build configuration
+ * and re-run your build process.
+ * See https://goo.gl/2aRDsh
+ */
 
-console.log('loaded service-worker.js');
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
-console.log('importing workbox');
-importScripts('https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js');
+self.addEventListener('message', (event) => {
+  if (event.data && event.data.type === 'SKIP_WAITING') {
+    self.skipWaiting();
+  }
+});
 
-if (workbox) {
-    console.log(`Workbox loaded`);
-
-    configurePrecaching();
-} else {
-    console.log(`Workbox did not load, not going to proceed with precache and route configuration`);
-}
-
-// This optional code is used to register a service worker.
-// register() is not called by default.
-// This lets the app load faster on subsequent visits in production, and gives
-// it offline capabilities. However, it also means that developers (and users)
-// will only see deployed updates on subsequent visits to a page, after all the
-// existing tabs open on the page have been closed, since previously cached
-// resources are updated in the background.
-// To learn more about the benefits of this model and instructions on how to
-// opt-in, read http://bit.ly/CRA-PWA
-function register(config) {
-    if (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) {
-        // The URL constructor is available in all browsers that support SW.
-        var publicUrl = new URL(process.env.PUBLIC_URL, window.location.href);
-
-        if (publicUrl.origin !== window.location.origin) {
-            // Our service worker won't work if PUBLIC_URL is on a different origin
-            // from what our page is served on. This might happen if a CDN is used to
-            // serve assets; see https://github.com/facebook/create-react-app/issues/2374
-            return;
-        }
-
-        window.addEventListener('load', function () {
-            var swUrl = "".concat(process.env.PUBLIC_URL, "/service-worker.js");
-
-            if (isLocalhost()) {
-                // This is running on localhost. Let's check if a service worker still exists or not.
-                checkValidServiceWorker(swUrl, config); // Add some additional logging to localhost, pointing developers to the
-                // service worker/PWA documentation.
-
-                navigator.serviceWorker.ready.then(function () {
-                    console.log('This web app is being served cache-first by a service ' + 'worker. To learn more, visit http://bit.ly/CRA-PWA');
-                });
-            } else {
-                // Is not localhost. Just register service worker
-                registerValidSW(swUrl, config);
-            }
-        });
-    }
-}
-
-function registerValidSW(swUrl, config) {
-    navigator.serviceWorker.register(swUrl).then(function (registration) {
-        registration.onupdatefound = function () {
-            var installingWorker = registration.installing;
-
-            if (installingWorker == null) {
-                return;
-            }
-
-            installingWorker.onstatechange = function () {
-                if (installingWorker.state === 'installed') {
-                    if (navigator.serviceWorker.controller) {
-                        // At this point, the updated precached content has been fetched,
-                        // but the previous service worker will still serve the older
-                        // content until all client tabs are closed.
-                        console.log('New content is available and will be used when all ' + 'tabs for this page are closed. See http://bit.ly/CRA-PWA.'); // Execute callback
-
-                        if (config && config.onUpdate) {
-                            config.onUpdate(registration);
-                        }
-                    } else {
-                        // At this point, everything has been precached.
-                        // It's the perfect time to display a
-                        // "Content is cached for offline use." message.
-                        console.log('Content is cached for offline use.'); // Execute callback
-
-                        if (config && config.onSuccess) {
-                            config.onSuccess(registration);
-                        }
-                    }
-                }
-            };
-        };
-    })["catch"](function (error) {
-        console.error('Error during service worker registration:', error);
-    });
-}
-
-function checkValidServiceWorker(swUrl, config) {
-    // Check if the service worker can be found. If it can't reload the page.
-    fetch(swUrl).then(function (response) {
-        // Ensure service worker exists, and that we really are getting a JS file.
-        var contentType = response.headers.get('content-type');
-
-        if (response.status === 404 || contentType != null && contentType.indexOf('javascript') === -1) {
-            // No service worker found. Probably a different app. Reload the page.
-            navigator.serviceWorker.ready.then(function (registration) {
-                registration.unregister().then(function () {
-                    window.location.reload();
-                });
-            });
-        } else {
-            // Service worker found. Proceed as normal.
-            registerValidSW(swUrl, config);
-        }
-    })["catch"](function () {
-        console.log('No internet connection found. App is running in offline mode.');
-    });
-}
-
-function isLocalhost() {
-    return Boolean(window.location.hostname === 'localhost' || // [::1] is the IPv6 localhost address.
-        window.location.hostname === '[::1]' || // 127.0.0.1/8 is considered localhost for IPv4.
-        window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/));
-}
-
-function unregister() {
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.ready.then(function (registration) {
-            registration.unregister();
-        });
-    }
-}
-
-function configurePrecaching() {
-    console.log(`configuring precache`);
-    workbox.precaching.precacheAndRoute([
+/**
+ * The workboxSW.precacheAndRoute() method efficiently caches and responds to
+ * requests for URLs in the manifest.
+ * See https://goo.gl/S9QRab
+ */
+self.__precacheManifest = [
   {
     "url": "build_a_tribute_page.css",
     "revision": "ce3253fda01a9329d02f38e1e7ac8acf"
@@ -184,15 +79,11 @@ function configurePrecaching() {
   },
   {
     "url": "index.html",
-    "revision": "d7e9078946a53014164c826e7d331f9e"
+    "revision": "68428fdb56f12d0d3497e9c61e2866c3"
   },
   {
     "url": "manifest.json",
     "revision": "ec95a09f8f90839099418a69ce8212ac"
-  },
-  {
-    "url": "rawServiceWorker.js",
-    "revision": "335ba11567158fbcacb3ee726b1acc82"
   },
   {
     "url": "redirect.html",
@@ -200,7 +91,10 @@ function configurePrecaching() {
   },
   {
     "url": "workbox-config.js",
-    "revision": "ec463fb53742b6b05e239fc0e5da6a08"
+    "revision": "3671b2ec18b1485d0bc44e426c8d70d8"
   }
-]);
-}
+].concat(self.__precacheManifest || []);
+workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
+
+workbox.routing.registerRoute(/\.(?:png|jpg|jpeg|svg)$/, new workbox.strategies.CacheFirst({ "cacheName":"images", plugins: [new workbox.expiration.Plugin({ maxEntries: 10, purgeOnQuotaError: false })] }), 'GET');
+workbox.routing.registerRoute(/\.(?:css|js)$/, new workbox.strategies.StaleWhileRevalidate({ "cacheName":"codes", plugins: [] }), 'GET');
