@@ -3,7 +3,7 @@ html, body {
     height: 100%;
     margin: 0;
     overflow: hidden;
-    font-family: "Yanone Kaffeesatz";
+    font-family: "Yanone Kaffeesatz", sans-serif;
     color: white;
     font-size: 18px;
     letter-spacing: 1.5px;
@@ -15,7 +15,7 @@ html, body {
 }
 
 h1, h2 {
-    font-family: "Sahitya";
+    font-family: "Sahitya", sans-serif;
     text-shadow: 0 0 4px white, 3px 3px 1px black;
     line-height: 1.2em;
 }
@@ -29,7 +29,7 @@ h2 {
 }
 
 code, pre {
-    font-family: "Share Tech Mono";
+    font-family: "Share Tech Mono", sans-serif;
     font-size: 0.8em;
 }
 
