@@ -191,16 +191,16 @@ function configurePrecaching() {
     "revision": "ec95a09f8f90839099418a69ce8212ac"
   },
   {
+    "url": "rawServiceWorker.js",
+    "revision": "335ba11567158fbcacb3ee726b1acc82"
+  },
+  {
     "url": "redirect.html",
     "revision": "e1a63989cbb0ef1f9d3d9c471bd8b377"
   },
   {
-    "url": "serviceWorker.js",
-    "revision": "335ba11567158fbcacb3ee726b1acc82"
-  },
-  {
     "url": "workbox-config.js",
-    "revision": "7d05c35a2a6599178b6e98981aeddf08"
+    "revision": "ec463fb53742b6b05e239fc0e5da6a08"
   }
 ]);
 }

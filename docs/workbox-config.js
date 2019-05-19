@@ -4,5 +4,5 @@ module.exports = {
     "**/*.{css,ico,png,jpg,html,json,js}"
   ],
   "swDest": "sw.js",
-  "swSrc": "serviceWorker.js"
+  "swSrc": "rawServiceWorker.js"
 };
