@@ -97,18 +97,18 @@ p {
 }
 
 .solid.star {
-    background-image: linear-gradient(hsla(240, 90%, 8%, 1) 0%, 99%, hsla(217, 24%, 71%, 0) 100%);
-    box-shadow: -10px -10px 20px hsl(240, 90%, 8%);
+    background-image: linear-gradient(hsla(240, 90%, 8%, 1) 0%, hsla(240, 90%, 8%, 1) 95%, hsla(217, 24%, 71%, 0) 100%);
+    box-shadow: 0 -20px 10px 10px hsl(240, 90%, 8%);
 }
 
 .solid.woods {
     background-color: hsl(195, 16%, 49%);
-    box-shadow: -10px -10px 20px hsl(195, 16%, 49%);
+    box-shadow: 0 0 20px 20px hsl(195, 16%, 49%);
 }
 
 .solid.sunset {
     background-color: hsl(238, 15%, 68%);
-    box-shadow: -10px -10px 20px hsl(238, 15%, 68%);
+    box-shadow: 0 0 20px 20px hsl(238, 15%, 68%);
 }
 
 a, a:link, a:active, a:hover, a:visited {
